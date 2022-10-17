@@ -25,7 +25,7 @@ resource "aws_iam_user_policy" "tag_user_policy" {
       "Action": "*",
       "Resource": "*",
       "Condition": {
-        "ForAllValues:StringNotLile": {
+        "ForAllValues:StringNotLike": {
           "aws:PrincipalTag/project": "${var.project_name}",
           "aws:RequestTag/project": "${var.project_name}",
           "aws:ResourceTag/project": "${var.project_name}"
