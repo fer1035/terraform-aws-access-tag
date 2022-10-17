@@ -18,6 +18,7 @@ resource "aws_iam_role" "tag_role" {
 EOF
   inline_policy {
     name = "${var.project_name}_tag_policy"
+
     policy = <<EOF
 {
   "Version": "2012-10-17",
