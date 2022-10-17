@@ -16,7 +16,7 @@ resource "aws_iam_user_policy" "tag_user_policy" {
   name = "${var.project_name}_tag_policy"
   user = aws_iam_user.tag_user.name
 
-  policy = policy = <<EOF
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
