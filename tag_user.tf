@@ -8,6 +8,11 @@ resource "aws_iam_access_key" "tag_access_key" {
   status = var.access_key_status
 }
 
+resource "aws_iam_user_policy_attachment" "tag_user_policy_attachmenth" {
+  user       = aws_iam_user.tag_user.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+}
+
 resource "aws_iam_user_policy" "tag_user_policy" {
   name = "${var.project_name}_tag_policy"
   user = aws_iam_user.tag_user.name
