@@ -1,7 +1,8 @@
 resource "aws_iam_role" "tag_role" {
   name                = "${var.project_name}_tag_role"
   managed_policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
-  assume_role_policy  = <<EOF
+
+  assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -16,6 +17,7 @@ resource "aws_iam_role" "tag_role" {
   ]
 }
 EOF
+
   inline_policy {
     name = "${var.project_name}_tag_policy"
 

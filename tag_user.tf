@@ -1,10 +1,6 @@
 resource "aws_iam_user" "tag_user" {
-  name = var.project_name
+  name = "${var.project_name}_tag_user"
   path = "/ni_projects/"
-
-  tags = {
-    project = var.project_name
-  }
 }
 
 resource "aws_iam_access_key" "tag_access_key" {
